@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        div{
+            background: linear-gradient(rgb(192, 238, 255), rgb(46, 249, 46));
+            height: 800px;
+            width: 320px;
+            text-align: center;
+
+        }
+       
+    li:hover {
+            background-color: rgb(255, 0, 208);
+           margin-right: 20px;
+        }
+        p {
+            margin-right:600px;
+        }
+       
+    </style>
+</head>
+<body>
+    <center>
+    <div>
+    <input type="text" name="" id="inp1">
+    <button type="submit" id="btn1" onclick="btn1()">ajouter</button>
+    <button type="submit" id="btn2">suprimer</button>
+     <ul id="ul">
+     </ul>
+    </div></center>
+    <script>
+
+        count=0 ;
+     
+     function btn1() {
+        let ul =  document.getElementById('ul')
+        let  inp1 = String(   document.getElementById('inp1').value)
+        document.getElementById('inp1').value = ""
+
+        index = `n${count}`
+        let p = document.createElement('p')
+    
+        p.innerHTML = inp1.trim()
+        
+        let li =  document.createElement('li') 
+        li.id = index
+        
+        
+        li.appendChild(p)
+
+        ul.appendChild(li)
+let btn2 = document.getElementById("btn2")
+        let li1 = document.getElementById(index);
+  li1.addEventListener("click", _ => {
+    li1.style.backgroundColor = "yellow";
+    
+   
+
+    btn2.addEventListener("click", _ => { 
+   li1.innerHTML=""
+    })
+    
+
+ li1.addEventListener("click", _ => { 
+        li1.style.backgroundColor = ""
+    
+    })
+
+  });
+count++   
+}
+   
+        
+    </script>
+</body>
+</html>

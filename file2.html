@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #b{
+            width: 636px;
+        }
+        #f{
+            width: 636px;
+        }
+        #btn1,#btn2{ width: 680px;
+        padding: 4px;
+        background-color: rgb(136, 244, 53);
+   
+    }
+        input{
+            padding: 4px;
+            background-color: rgb(202, 243, 222);
+        }
+        table{
+            width: 680px;
+        }
+        fieldset{
+          margin-left: 300px;
+            margin-top: 100px;
+            margin-right: 900px;
+            background: linear-gradient(rgb(97, 97, 99), rgb(47, 247, 187));
+        }
+    </style>
+</head>
+<body><center><fieldset>
+        <div>
+            <div>
+           <label for="">nom</label> <input type="text" name="" id="b" ><br>
+          
+           <label for="">prix</label> <input type="text" name="" id="c">
+            <label for="">definition</label><input type="text" name="" id="d"><br>
+           <br> <label for="">category</label> <input type="text" name="" id="e"><br>
+          <label for=""> total</label>  <input type="text" name="" id="f"><br>
+          
+    
+                <button type="submit" id="btn1" onclick="crud()">envoiyer</button><br>
+                <button type="btn2" id="btn2" > suprimer</button>
+            </div>
+        </div>
+        <div>
+            <table border="2px" id="tab">
+
+                <tr>
+                <th>id</th>
+                <th>nom</th>
+                <th>prix</th>
+                <th>definition</th>
+                <th>category</th>
+                <th>total</th>
+                <th>delet</th>
+
+                </tr>
+            </table>
+        </div>
+    </fieldset>
+    </center>
+        <script>
+
+id =0
+
+      
+let tab = document.getElementById("tab")
+
+  
+function crud(){
+    let b = document.getElementById("b").value
+   
+
+            let c = document.getElementById("c").value
+            let d = document.getElementById("d").value
+            let e = document.getElementById("e").value
+            let f = document.getElementById("f").value
+        
+        
+
+        let tab = document.getElementById("tab")
+            let tr = document.createElement("tr")
+            tab.appendChild(tr)
+
+            let td1 = document.createElement('td')
+            td1.innerHTML = id
+            console.log(td1)
+            tr.appendChild(td1)
+
+
+
+
+            let td3 = document.createElement('td')
+            td3.innerHTML = b 
+            document.getElementById("b").value = ""
+            console.log(td3)
+            tr.appendChild(td3)
+
+            let td4 = document.createElement('td')
+            td4.innerHTML = c
+            document.getElementById("c").value = ""
+            tr.appendChild(td4)
+
+
+            let td5 = document.createElement('td')
+            td5.innerHTML = d
+            document.getElementById("d").value = ""
+            tr.appendChild(td5)
+
+            let td6 = document.createElement('td')
+            td6.innerHTML = e
+            document.getElementById("e").value = ""
+            tr.appendChild(td6)
+
+            let td7 = document.createElement('td')
+            td7.innerHTML=f
+            document.getElementById("f").value = ""
+            tr.appendChild(td7)
+        
+
+            let td9 = document.createElement("td")
+            let del = document.createElement('button')
+            del.type = "reset"
+            del.innerHTML ="delet"
+            td9.appendChild(del)
+            tr.appendChild(td9)
+            del.addEventListener("click",x = _ =>(
+                tab.removeChild(tr)
+            ))
+
+   
+            let sup = document.getElementById('btn2')
+sup.addEventListener("click",v = _ => (
+    tab.removeChild(tr)
+))
+      
+
+            id++
+            
+        }
+
+         
+        </script>
+</body>
+</html>
