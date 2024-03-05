@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contener">
+        <fieldset>
+    <div id="a" onmouseout="ali1()">hello word</div>
+    <label for="" id="b"  ></label>
+    <div id="c" style=" display: none;" >
+        <ul>
+            <li>ali</li>
+            <li>atika</li>
+            <li>hanane</li>
+        </ul>
+
+    </div>
+</fieldset>
+</div>
+    <script>
+              let a = document.getElementById('a')
+            let b= document.getElementById("b")
+            let c = document.getElementById('c')
+            let contener = document.getElementById('contener')
+        function ali1(){
+      
+            
+            c.style.display = "block";
+            a.style.color = "green"
+
+            c.addEventListener("mouseleave", x = _ =>(
+                c.style.display = "none"
+            ))
+
+            contener.addEventListener("mousemove" , x2 = (event) =>(
+                b.innerHTML= `position  de cursure ${event.clientX} , ${event.clientY}`
+            ))
+
+
+
+
+        }
+    </script>
+</body>
+</html>
