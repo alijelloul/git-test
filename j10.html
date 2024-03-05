@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <img src="aa2.jpg" alt="" width="300px" height="300px">
+    <button id="btn1">envoiyer</button>
+    <b>hhhhhhhhhhhhh</b>
+    <script src="code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("div").append("<h1>hello word </h1>")
+        $("img").before("<p>hadi befor 9bal</p>")
+        $("img").after("<p>hadi after ba3d</p>")
+        $('b').remove()
+
+    })
+})
+    </script>
+</body>
+</html>
